@@ -1,0 +1,37 @@
+--- codecheck/codechecker-unix.cbp.orig	2014-04-28 11:28:03.000000000 -0300
++++ codecheck/codechecker-unix.cbp	2014-04-28 22:06:43.323347652 -0300
+@@ -10,7 +10,7 @@
+ 				<Option output="libcodechecker" prefix_auto="1" extension_auto="1" />
+ 				<Option type="3" />
+ 				<Option compiler="gcc" />
+-				<Option host_application="$(#cb)/devel/codeblocks" />
++				<Option host_application="codeblocks" />
+ 				<Compiler>
+ 					<Add option="-Wall" />
+ 					<Add option="-g" />
+@@ -23,20 +23,20 @@
+ 					<Add option="-fPIC" />
+ 					<Add option="-DcbDEBUG" />
+ 					<Add option="-DCB_PRECOMP" />
+-					<Add directory="$(#cb)/include" />
+-					<Add directory="$(#cb)/include/wxscintilla/include" />
++					<Add directory="/usr/include/codeblocks" />
++					<Add directory="/usr/include/codeblocks/wxscintilla/include" />
+ 				</Compiler>
+ 				<Linker>
+ 					<Add option="`wx-config --libs`" />
+ 					<Add library="codeblocks" />
+ 					<Add library="wxscintilla" />
+-					<Add directory="$(#cb)/devel" />
++					<Add directory="../" />
+ 				</Linker>
+ 				<ExtraCommands>
+ 					<Add after="zip -j9 codechecker.zip manifest.xml" />
+ 					<Add after="zip -j9 codechecker.cbplugin libcodechecker.so codechecker.zip" />
+-					<Add after="/bin/cp codechecker.zip $(#cb)/devel/share/codeblocks" />
+-					<Add after="/bin/cp libcodechecker.so $(#cb)/devel/share/codeblocks/plugins" />
++					<Add after="/bin/cp codechecker.zip ../" />
++					<Add after="/bin/cp libcodechecker.so ../plugins" />
+ 					<Mode after="always" />
+ 				</ExtraCommands>
+ 			</Target>
