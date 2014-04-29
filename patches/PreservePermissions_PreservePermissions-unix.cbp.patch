@@ -1,0 +1,16 @@
+--- PreservePermissions/PreservePermissions-unix.cbp.orig	2014-04-28 11:28:03.000000000 -0300
++++ PreservePermissions/PreservePermissions-unix.cbp	2014-04-28 22:06:43.320347689 -0300
+@@ -18,10 +18,13 @@
+ 					<Add option="`pkg-config --cflags codeblocks`" />
+ 					<Add option="`wx-config --cflags`" />
+ 					<Add option="-fPIC" />
++					<Add directory="/usr/include/codeblocks" />
++					<Add directory="/usr/include/codeblocks/wxscintilla/include" />
+ 				</Compiler>
+ 				<Linker>
+ 					<Add option="`pkg-config --libs codeblocks`" />
+ 					<Add option="`wx-config --libs`" />
++					<Add directory="../" />
+ 				</Linker>
+ 				<ExtraCommands>
+ 					<Add after="zip -j9 PermissionsPreserver.zip manifest.xml" />
