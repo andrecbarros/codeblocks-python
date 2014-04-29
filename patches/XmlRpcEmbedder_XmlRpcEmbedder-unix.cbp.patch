@@ -1,0 +1,66 @@
+--- XmlRpcEmbedder/XmlRpcEmbedder-unix.cbp.orig	2014-04-28 11:28:03.000000000 -0300
++++ XmlRpcEmbedder/XmlRpcEmbedder-unix.cbp	2014-04-28 22:06:43.318347714 -0300
+@@ -15,11 +15,13 @@
+ 				<Compiler>
+ 					<Add option="-fPIC" />
+ 					<Add directory="XMLRPC/include" />
++					<Add directory="/usr/include/codeblocks" />
++					<Add directory="/usr/include/codeblocks/wxscintilla/include" />
+ 				</Compiler>
+ 			</Target>
+ 			<Target title="wxEmbedder">
+-				<Option output="$(#cb)/devel/XmlRpcEmbedder" prefix_auto="1" extension_auto="1" />
+-				<Option working_dir="$(#cb)/devel" />
++				<Option output="../XmlRpcEmbedder" prefix_auto="1" extension_auto="1" />
++				<Option working_dir="/tmp/codeblocks/cbil" />
+ 				<Option type="3" />
+ 				<Option compiler="gcc" />
+ 				<Compiler>
+@@ -31,16 +33,19 @@
+ 					<Add option="-Winvalid-pch" />
+ 					<Add option="-fPIC" />
+ 					<Add directory="XMLRPC/include" />
++					<Add directory="/usr/include/codeblocks" />
++					<Add directory="/usr/include/codeblocks/wxscintilla/include" />
+ 				</Compiler>
+ 				<Linker>
+ 					<Add option="`wx-config --libs`" />
+ 					<Add library="XmlRpc" />
+ 					<Add directory="XMLRPC" />
++					<Add directory="../" />
+ 				</Linker>
+ 			</Target>
+ 			<Target title="LibCommon">
+-				<Option output="$(#cb)/devel/XmlRpcEmbedder" prefix_auto="1" extension_auto="1" />
+-				<Option working_dir="$(#cb)/devel" />
++				<Option output="../XmlRpcEmbedder" prefix_auto="1" extension_auto="1" />
++				<Option working_dir="/tmp/codeblocks/cbil" />
+ 				<Option type="3" />
+ 				<Option compiler="gcc" />
+ 				<Compiler>
+@@ -52,9 +57,12 @@
+ 					<Add option="-Winvalid-pch" />
+ 					<Add option="-fPIC" />
+ 					<Add directory="XMLRPC/include" />
++					<Add directory="/usr/include/codeblocks" />
++					<Add directory="/usr/include/codeblocks/wxscintilla/include" />
+ 				</Compiler>
+ 				<Linker>
+ 					<Add option="`wx-config --libs`" />
++					<Add directory="../" />
+ 				</Linker>
+ 			</Target>
+ 			<Target title="cbplugin">
+@@ -71,9 +79,12 @@
+ 					<Add option="-Winvalid-pch" />
+ 					<Add option="-fPIC" />
+ 					<Add directory="XMLRPC/include" />
++					<Add directory="/usr/include/codeblocks" />
++					<Add directory="/usr/include/codeblocks/wxscintilla/include" />
+ 				</Compiler>
+ 				<Linker>
+ 					<Add option="`wx-config --libs`" />
++					<Add directory="../" />
+ 				</Linker>
+ 			</Target>
+ 		</Build>
